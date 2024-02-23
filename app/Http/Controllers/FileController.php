@@ -11,16 +11,12 @@ class FileController extends Controller
 {
     public function index()
     {
-        if (!Session::get('username')) return redirect('/');
-
         $files = File::all();
         return view('files.index', compact('files'));
     }
 
     public function store(Request $request)
     {
-        if (!Session::get('username')) return redirect('/');
-
         try {
             $request->validate([
                 'title' => 'required',

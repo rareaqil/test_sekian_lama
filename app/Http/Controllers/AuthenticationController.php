@@ -28,7 +28,7 @@ class AuthenticationController extends Controller
     }
 
     public function home() {
-        if (!Session::get('username')) return redirect('/');
+        // if (!Session::get('username')) return redirect('/');
 
         $cheapestBean = Bean::where('Price', '>', 0)
                     ->orderBy('Price')

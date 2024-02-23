@@ -11,8 +11,6 @@ class BeanController extends Controller
 {
     public function index()
     {
-        if (!Session::get('username')) return redirect('/');
-
         $beans = Bean::all();
         return view('beanscatalog', ['beans' => $beans]);
     }
